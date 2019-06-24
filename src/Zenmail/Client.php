@@ -23,7 +23,9 @@ class Client
      * Maps a property name to a Zenmail\Resources class.
      */
     protected $classMap = [
-        'contacts' => 'Zenmail\\Resources\\Contacts'
+        'contacts'     => 'Zenmail\\Resources\\Contacts',
+        'campaigns'    => 'Zenmail\\Resources\\Campaigns',
+        'contactLists' => 'Zenmail\\Resources\\ContactLists'
     ];
 
     /**

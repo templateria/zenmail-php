@@ -88,6 +88,68 @@ $zenmail->contacts->update($contact->id, [
 $zenmail->contacts->delete($contact->id);
 ```
 
+## Campanhas
+
+### Obter uma Campanha
+
+```php
+$zenmail->campaigns->get(12345);
+```
+
+### Listar Campanhas
+
+```php
+foreach ($zenmail->campaigns->all() as $campaign) {
+    echo 'Campanha #' . $campaign->id . ': ' . $campaign->subject;
+}
+```
+
+```php
+$page = 1;
+
+do {
+    $campaigns = $zenmail->campaigns->find(['page' => $page]);
+    $lastPage  = $campaigns->getPaginationData()->last_page;
+    foreach ($campaigns as $campaign) {
+        echo 'Campanha #' . $campaign->id . ': ' . $campaign->subject . "\n";
+    }
+    $page++;
+} while ($page <= $lastPage);
+```
+
+### Criar uma Campanha
+
+```php
+$campaign = $zenmail->campaigns->create([
+    'recipients' => 'lists',
+    'list_ids'   => [329104],
+    'subject'    => 'Novidades do Zenmail',
+    'from_name'  => 'Zenmail',
+    'from_email' => 'alo@zenmail.marketing',
+    'html'       => $html,
+]);
+```
+
+### Enviando uma Campanha
+
+```php
+$zenmail->campaigns->send($campaign->id);
+```
+
+### Editando uma Campanha
+
+```php
+$campaign = $zenmail->campaigns->update([
+    'recipients' => 'all'
+]);
+```
+
+### Remover uma Campanha
+
+```php
+$zenmail->campaigns->delete($campaign->id);
+```
+
 ## Suporte
 
 Acesse nossa [documentação](https://help.zenmail.marketing) para saber mais sobre o *Zenmail* e envie um email para [alo@zenmail.marketing](mailto:alo@zenmail.marketing) caso tenha alguma dúvida.
