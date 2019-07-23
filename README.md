@@ -1,6 +1,6 @@
 # PHP Zenmail API Client
 
-Zenmail é a ferramenta de envio de email marketing criada pela [Templateria](https://templateria.com/). Esta biblioteca PHP é um cliente de sua API que permite a automação de qualquer recurso disponível no [painel web](https://app.zenmail.marketing).
+[Zenmail](https://zenmail.com.br) é a ferramenta de [envio de email marketing](https://zenmail.com.br/recursos/) criada pela [Templateria](https://templateria.com/). Esta biblioteca PHP é um cliente de sua API que permite a automação de qualquer recurso disponível no [painel web](https://app.zenmail.marketing).
 
 O próprio painel do Zenmail consome sua API - essa é a nossa maneira de garantir uma API completa e fácil de usar.
 
@@ -14,7 +14,7 @@ composer require templateria/zenmail-php
 
 ## Autenticação
 
-Solicite um token de acesso ao suporte enviando um email para [alo@zenmail.marketing](mailto:alo@zenmail.marketing).
+Solicite um token de acesso ao suporte enviando um email para [suporte@zenmail.com.br](mailto:suporte@zenmail.com.br).
 
 ## Introdução
 
@@ -125,7 +125,7 @@ $campaign = $zenmail->campaigns->create([
     'list_ids'   => [329104],
     'subject'    => 'Novidades do Zenmail',
     'from_name'  => 'Zenmail',
-    'from_email' => 'alo@zenmail.marketing',
+    'from_email' => 'suporte@zenmail.com.br',
     'html'       => $html,
 ]);
 ```
@@ -152,11 +152,11 @@ $zenmail->campaigns->delete($campaign->id);
 
 ## Suporte
 
-Acesse nossa [documentação](https://help.zenmail.marketing) para saber mais sobre o *Zenmail* e envie um email para [alo@zenmail.marketing](mailto:alo@zenmail.marketing) caso tenha alguma dúvida.
+Acesse nossa [documentação](https://zenmail.com.br/ajuda) para saber mais sobre o *Zenmail* e envie um email para [suporte@zenmail.com.br](mailto:suporte@zenmail.com.br) caso tenha alguma dúvida.
 
 ## Segurança
 
-Para questões de segurança como vulnerabilidades encontradas ou outros assuntos, envie um email para [alo@zenmail.marketing](mailto:alo@zenmail.marketing).
+Para questões de segurança como vulnerabilidades encontradas ou outros assuntos, envie um email para [suporte@zenmail.com.br](mailto:suporte@zenmail.com.br).
 
 ## Changelog
 
