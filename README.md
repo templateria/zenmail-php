@@ -45,6 +45,15 @@ Contatos
 [x] remover contatos
 [x] atualizar contatos
 
+Listas
+[x] [criar uma lista](#lists-create)
+[x] [adicionar um contato a uma lista](#lists-append)
+[x] [buscar listas](#lists-list)
+[x] [retornar uma lista](#lists-get)
+[x] [remover uma lista](#lists-delete)
+[x] [atualizar/editar uma lista](#lists-update)
+
+
 ## Gerenciamento de Contatos
 
 ### Criar um Contato
@@ -86,6 +95,48 @@ $zenmail->contacts->update($contact->id, [
 
 ```php
 $zenmail->contacts->delete($contact->id);
+```
+
+## Listas
+
+### Criar uma Lista <a name="lists-create"></a>
+
+```php
+$zenmail->contactLists->create(['name' => 'Assinantes da Newsletter']);
+```
+
+### Adicionar um Contato a uma Lista <a name="lists-append"></a>
+
+Se o contato ainda não existe na conta, ele será criado automaticamente. Se o contato já existe em alguma outra lista, ele apenas será adicionado a mais uma lista.
+
+```php
+$zenmail->contactLists->append($listId, ['email' => 'pedro@templateria.com']);
+```
+
+### Buscar uma Lista por Nome <a name="lists-find"></a>
+
+```php
+$lists = $zenmail->contactLists->find(['name' => 'Assinantes da Newsletter']);
+```
+
+### Retornar uma Lista <a name="lists-get"></a>
+
+```php
+$lists = $zenmail->contacts->get(['name' => 'Assinantes da Newsletter']);
+```
+
+### Atualizar/Editar uma Lista <a name="lists-update"></a>
+
+```php
+$listId = 9999;
+$zenmail->contactLists->update($listId, ['name' => 'Assinantes da Newsletter pelo Site']);
+```
+
+### Remover uma Lista <a name="lists-delete"></a>
+
+```php
+$listId = 9999;
+$lists  = $zenmail->contactLists->delete($listId);
 ```
 
 ## Campanhas
