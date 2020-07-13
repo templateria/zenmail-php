@@ -46,11 +46,17 @@ Contatos
 [x] atualizar contatos
 
 Listas
+
 [x] [criar uma lista](#lists-create)
+
 [x] [adicionar um contato a uma lista](#lists-append)
+
 [x] [buscar listas](#lists-list)
+
 [x] [retornar uma lista](#lists-get)
+
 [x] [remover uma lista](#lists-delete)
+
 [x] [atualizar/editar uma lista](#lists-update)
 
 
